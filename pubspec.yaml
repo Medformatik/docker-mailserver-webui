@@ -9,7 +9,7 @@ environment:
 
 dependencies:
   openapi:
-    path: ./lib/openapi/
+    path: ./openapi/
   flutter:
     sdk: flutter
 
