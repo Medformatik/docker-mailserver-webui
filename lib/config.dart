@@ -1,16 +1,35 @@
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:openapi/api.dart';
 
 class AppConfig {
+  final storage = const FlutterSecureStorage();
+
   static const String appName = 'Docker Mailserver WebUI';
 
-  static String get apiUrl => const String.fromEnvironment('API_URL', defaultValue: 'http://mailserver:3000');
+  Future<String?> getApiUrl() async {
+    return storage.read(key: 'API_URL');
+  }
 
-  static String get apiKey => const String.fromEnvironment('API_KEY');
+  Future<String?> getApiKey() async {
+    return storage.read(key: 'API_KEY');
+  }
 
-  static ApiClient get apiClient {
+  Future<void> setApiUrl(String url) async {
+    await storage.write(key: 'API_URL', value: url);
+  }
+
+  Future<void> setApiKey(String key) async {
+    await storage.write(key: 'API_KEY', value: key);
+  }
+
+  Future<ApiClient?> getApiClient() async {
+    final apiUrl = await getApiUrl();
+    final apiKey = await getApiKey();
+    if (apiUrl == null || apiKey == null) {
+      return Future.value(null);
+    }
     final apiClient = ApiClient(
       basePath: apiUrl,
-      authentication: HttpBearerAuth()..accessToken = apiKey,
     );
     apiClient.addDefaultHeader('X-API-Key', apiKey);
     return apiClient;
