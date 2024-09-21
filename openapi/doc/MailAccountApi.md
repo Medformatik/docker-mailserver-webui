@@ -197,7 +197,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getEmail**
-> getEmail()
+> GetEmail200Response getEmail()
 
 Get all registered mail account.
 
@@ -212,7 +212,8 @@ import 'package:openapi/api.dart';
 final api_instance = MailAccountApi();
 
 try {
-    api_instance.getEmail();
+    final result = api_instance.getEmail();
+    print(result);
 } catch (e) {
     print('Exception when calling MailAccountApi->getEmail: $e\n');
 }
@@ -223,7 +224,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-void (empty response body)
+[**GetEmail200Response**](GetEmail200Response.md)
 
 ### Authorization
 
@@ -232,7 +233,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

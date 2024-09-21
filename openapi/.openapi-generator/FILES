@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 README.md
 analysis_options.yaml
@@ -11,6 +10,13 @@ doc/AliasesApi.md
 doc/DKIMDomainKeysIdentifiedMailApi.md
 doc/DovecotApi.md
 doc/Fail2banApi.md
+doc/GetEmail200Response.md
+doc/GetEmail200ResponseDataInner.md
+doc/GetEmail200ResponseDataInnerAliasInner.md
+doc/GetEmail200ResponseDataInnerQuota.md
+doc/GetEmail200ResponseDataInnerRestriction.md
+doc/GetEmail200ResponseMetadata.md
+doc/GetEmail200ResponseMetadataRequest.md
 doc/LogsApi.md
 doc/MailAccountApi.md
 doc/QuotaApi.md
@@ -43,6 +49,13 @@ lib/model/add_alias_request.dart
 lib/model/add_dovecot_master_request.dart
 lib/model/add_email_request.dart
 lib/model/add_email_restrict_request.dart
+lib/model/get_email200_response.dart
+lib/model/get_email200_response_data_inner.dart
+lib/model/get_email200_response_data_inner_alias_inner.dart
+lib/model/get_email200_response_data_inner_quota.dart
+lib/model/get_email200_response_data_inner_restriction.dart
+lib/model/get_email200_response_metadata.dart
+lib/model/get_email200_response_metadata_request.dart
 lib/model/relay_add_auth_request.dart
 lib/model/relay_add_domain_request.dart
 lib/model/relay_exclude_domain_request.dart
@@ -58,6 +71,13 @@ test/aliases_api_test.dart
 test/dkim_domain_keys_identified_mail_api_test.dart
 test/dovecot_api_test.dart
 test/fail2ban_api_test.dart
+test/get_email200_response_data_inner_alias_inner_test.dart
+test/get_email200_response_data_inner_quota_test.dart
+test/get_email200_response_data_inner_restriction_test.dart
+test/get_email200_response_data_inner_test.dart
+test/get_email200_response_metadata_request_test.dart
+test/get_email200_response_metadata_test.dart
+test/get_email200_response_test.dart
 test/logs_api_test.dart
 test/mail_account_api_test.dart
 test/quota_api_test.dart

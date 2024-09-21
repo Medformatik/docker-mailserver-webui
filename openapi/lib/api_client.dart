@@ -190,6 +190,20 @@ class ApiClient {
           return AddEmailRequest.fromJson(value);
         case 'AddEmailRestrictRequest':
           return AddEmailRestrictRequest.fromJson(value);
+        case 'GetEmail200Response':
+          return GetEmail200Response.fromJson(value);
+        case 'GetEmail200ResponseDataInner':
+          return GetEmail200ResponseDataInner.fromJson(value);
+        case 'GetEmail200ResponseDataInnerAliasInner':
+          return GetEmail200ResponseDataInnerAliasInner.fromJson(value);
+        case 'GetEmail200ResponseDataInnerQuota':
+          return GetEmail200ResponseDataInnerQuota.fromJson(value);
+        case 'GetEmail200ResponseDataInnerRestriction':
+          return GetEmail200ResponseDataInnerRestriction.fromJson(value);
+        case 'GetEmail200ResponseMetadata':
+          return GetEmail200ResponseMetadata.fromJson(value);
+        case 'GetEmail200ResponseMetadataRequest':
+          return GetEmail200ResponseMetadataRequest.fromJson(value);
         case 'RelayAddAuthRequest':
           return RelayAddAuthRequest.fromJson(value);
         case 'RelayAddDomainRequest':

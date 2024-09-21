@@ -47,7 +47,7 @@ void main() {
 
     // Get all registered mail account.
     //
-    //Future getEmail() async
+    //Future<GetEmail200Response> getEmail() async
     test('test getEmail', () async {
       // TODO
     });

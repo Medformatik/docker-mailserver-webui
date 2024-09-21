@@ -16,7 +16,7 @@ class SetupDkimRequest {
     this.selector,
     this.domain,
     this.keytype,
-    this.keysize = const SetupDkimRequestKeysizeEnum._(SetupDkimRequestKeysizeEnum.number2048),
+    this.keysize = const SetupDkimRequestKeysizeEnum._(2048),
   });
 
   ///
@@ -40,19 +40,12 @@ class SetupDkimRequest {
   SetupDkimRequestKeysizeEnum keysize;
 
   @override
-  bool operator ==(Object other) => identical(this, other) || other is SetupDkimRequest &&
-    other.selector == selector &&
-    other.domain == domain &&
-    other.keytype == keytype &&
-    other.keysize == keysize;
+  bool operator ==(Object other) => identical(this, other) || other is SetupDkimRequest && other.selector == selector && other.domain == domain && other.keytype == keytype && other.keysize == keysize;
 
   @override
   int get hashCode =>
-    // ignore: unnecessary_parenthesis
-    (selector == null ? 0 : selector!.hashCode) +
-    (domain == null ? 0 : domain!.hashCode) +
-    (keytype == null ? 0 : keytype!.hashCode) +
-    (keysize.hashCode);
+      // ignore: unnecessary_parenthesis
+      (selector == null ? 0 : selector!.hashCode) + (domain == null ? 0 : domain!.hashCode) + (keytype == null ? 0 : keytype!.hashCode) + (keysize.hashCode);
 
   @override
   String toString() => 'SetupDkimRequest[selector=$selector, domain=$domain, keytype=$keytype, keysize=$keysize]';
@@ -74,7 +67,7 @@ class SetupDkimRequest {
     } else {
       json[r'keytype'] = null;
     }
-      json[r'keysize'] = this.keysize;
+    json[r'keysize'] = this.keysize;
     return json;
   }
 
@@ -106,7 +99,10 @@ class SetupDkimRequest {
     return null;
   }
 
-  static List<SetupDkimRequest> listFromJson(dynamic json, {bool growable = false,}) {
+  static List<SetupDkimRequest> listFromJson(
+    dynamic json, {
+    bool growable = false,
+  }) {
     final result = <SetupDkimRequest>[];
     if (json is List && json.isNotEmpty) {
       for (final row in json) {
@@ -134,23 +130,27 @@ class SetupDkimRequest {
   }
 
   // maps a json object with a list of SetupDkimRequest-objects as value to a dart map
-  static Map<String, List<SetupDkimRequest>> mapListFromJson(dynamic json, {bool growable = false,}) {
+  static Map<String, List<SetupDkimRequest>> mapListFromJson(
+    dynamic json, {
+    bool growable = false,
+  }) {
     final map = <String, List<SetupDkimRequest>>{};
     if (json is Map && json.isNotEmpty) {
       // ignore: parameter_assignments
       json = json.cast<String, dynamic>();
       for (final entry in json.entries) {
-        map[entry.key] = SetupDkimRequest.listFromJson(entry.value, growable: growable,);
+        map[entry.key] = SetupDkimRequest.listFromJson(
+          entry.value,
+          growable: growable,
+        );
       }
     }
     return map;
   }
 
   /// The list of required keys that must be present in a JSON.
-  static const requiredKeys = <String>{
-  };
+  static const requiredKeys = <String>{};
 }
-
 
 class SetupDkimRequestKeytypeEnum {
   /// Instantiate a new enum with the provided [value].
@@ -175,7 +175,10 @@ class SetupDkimRequestKeytypeEnum {
 
   static SetupDkimRequestKeytypeEnum? fromJson(dynamic value) => SetupDkimRequestKeytypeEnumTypeTransformer().decode(value);
 
-  static List<SetupDkimRequestKeytypeEnum> listFromJson(dynamic json, {bool growable = false,}) {
+  static List<SetupDkimRequestKeytypeEnum> listFromJson(
+    dynamic json, {
+    bool growable = false,
+  }) {
     final result = <SetupDkimRequestKeytypeEnum>[];
     if (json is List && json.isNotEmpty) {
       for (final row in json) {
@@ -209,8 +212,10 @@ class SetupDkimRequestKeytypeEnumTypeTransformer {
   SetupDkimRequestKeytypeEnum? decode(dynamic data, {bool allowNull = true}) {
     if (data != null) {
       switch (data) {
-        case r'rsa': return SetupDkimRequestKeytypeEnum.rsa;
-        case r'ed25519': return SetupDkimRequestKeytypeEnum.ed25519;
+        case r'rsa':
+          return SetupDkimRequestKeytypeEnum.rsa;
+        case r'ed25519':
+          return SetupDkimRequestKeytypeEnum.ed25519;
         default:
           if (!allowNull) {
             throw ArgumentError('Unknown enum value to decode: $data');
@@ -223,8 +228,6 @@ class SetupDkimRequestKeytypeEnumTypeTransformer {
   /// Singleton [SetupDkimRequestKeytypeEnumTypeTransformer] instance.
   static SetupDkimRequestKeytypeEnumTypeTransformer? _instance;
 }
-
-
 
 class SetupDkimRequestKeysizeEnum {
   /// Instantiate a new enum with the provided [value].
@@ -251,7 +254,10 @@ class SetupDkimRequestKeysizeEnum {
 
   static SetupDkimRequestKeysizeEnum? fromJson(dynamic value) => SetupDkimRequestKeysizeEnumTypeTransformer().decode(value);
 
-  static List<SetupDkimRequestKeysizeEnum> listFromJson(dynamic json, {bool growable = false,}) {
+  static List<SetupDkimRequestKeysizeEnum> listFromJson(
+    dynamic json, {
+    bool growable = false,
+  }) {
     final result = <SetupDkimRequestKeysizeEnum>[];
     if (json is List && json.isNotEmpty) {
       for (final row in json) {
@@ -285,9 +291,12 @@ class SetupDkimRequestKeysizeEnumTypeTransformer {
   SetupDkimRequestKeysizeEnum? decode(dynamic data, {bool allowNull = true}) {
     if (data != null) {
       switch (data) {
-        case 1024: return SetupDkimRequestKeysizeEnum.number1024;
-        case 2048: return SetupDkimRequestKeysizeEnum.number2048;
-        case 4096: return SetupDkimRequestKeysizeEnum.number4096;
+        case 1024:
+          return SetupDkimRequestKeysizeEnum.number1024;
+        case 2048:
+          return SetupDkimRequestKeysizeEnum.number2048;
+        case 4096:
+          return SetupDkimRequestKeysizeEnum.number4096;
         default:
           if (!allowNull) {
             throw ArgumentError('Unknown enum value to decode: $data');
@@ -300,5 +309,3 @@ class SetupDkimRequestKeysizeEnumTypeTransformer {
   /// Singleton [SetupDkimRequestKeysizeEnumTypeTransformer] instance.
   static SetupDkimRequestKeysizeEnumTypeTransformer? _instance;
 }
-
-
